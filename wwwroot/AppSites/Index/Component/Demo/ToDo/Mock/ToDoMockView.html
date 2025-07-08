@@ -1,0 +1,85 @@
+
+<div style="text-align:center;margin: 5px;">
+
+    <div class="ar-notification" id="createMockResponseContainer" style="margin:3px; padding:3px;font-size:xx-small;display:none;">
+        <button class="ar-delete" onclick="hideElm('createMockResponseContainer')"></button>
+        <div id="createMockResponse"></div>
+    </div>
+
+    <div class="ar-flex-content">
+        <select id="mockCount" class="ar-border-left" style="padding-left:5px;height: 24px; min-height: 24px;font-size:xx-small">
+            <option value="10">10 Records</option>
+            <option value="250">250 Records</option>
+            <option value="1000">1K Records</option>
+            <option value="10000">10K Records</option>
+            <option value="100000">100K Records</option>
+            <option value="1000000">1Million Records</option>
+        </select>
+        <button id="createToDoMockJsonBtn" class="ar-border-right" style="max-height:24px; height:24px; font-size: xx-small;" title="Create ToDo Mock Json"
+                onclick="createMockToDoJson('createMockProgress', 'createMockResponse', getElm('mockCount').value, 'createToDoMockJsonBtn')">
+            Create Mock Data <span id="createMockProgress"></span>
+        </button>
+    </div>
+
+</div>
+
+<script>
+
+     function createMockToDoJson(progressElmId, responseElmId, mockCountVal, actionBtnElmId, successCallback, failureCallback) {
+        let id = window.ajaxid++
+        let responseElm = getElm(responseElmId)
+        let responseContainerElmId = responseElmId + "Container"
+        responseElm.textContent = ''
+        hideElm(responseContainerElmId)
+       
+        let valid = true
+                
+        if (valid == true) {
+            getElm(actionBtnElmId).setAttribute("disabled", true)
+
+            let refreshMode = ""
+            let refreshDomain = ""
+
+            let apiUrl = '/AppApi/AppApi'
+            let apiMethod = 'CreateMockJson'
+
+            let apiParams = {
+                "appSite": "{{$AppSite}}",
+                "appView": "{{$AppView}}",
+                "appFile": "{{$ViewParentID}}",
+                "mockCount" : mockCountVal
+            }
+
+          let processReturn = function (result, responseElmId, successCallback, failureCallback) {
+
+                let responseElm = getElm(responseElmId)
+
+                getElm(actionBtnElmId).removeAttribute("disabled")
+
+                if (result.hasOwnProperty('error') === true) {
+
+                    showText(responseElm, result.error, 'red')
+                }
+                else if (result.hasOwnProperty('message') === true) {
+
+                    refreshViewComponentHtml(progressElmId, 'noresponse', "{{$AppSite}}", "{{$AppView}}", "HubMappingList", {}, "ajax", "", false, function () {
+                        let responseElm = getElm(responseElmId)
+                        showText(responseElm, result.message, 'green')
+                    })
+
+                    if (typeof successCallback === "function") {
+                        successCallback()
+                    }
+                }
+                else if (result.hasOwnProperty('warn') === true) {
+
+                    showText(responseElm, result.warn, 'red')
+                }
+            }
+
+            callAssemblerApi(progressElmId, responseElmId, apiUrl, apiMethod, apiParams, refreshMode, refreshDomain, processReturn, successCallback, failureCallback, 0, "{{$AppSite}}", "{{$AppView}}", "AppHub", "")
+        }
+    }
+
+
+</script>

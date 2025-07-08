@@ -1,0 +1,25 @@
+{
+  "DeployList": [
+    {
+      "DeployTitle": "Baremetal",
+      "DeployInfo": "OVHCloud SGD $16/M",
+      "ProviderLink": "https://www.ovhcloud.com/",
+      "DeploySpec": "SystemD Socket Activated <br/> Shutdown in 5 Secs Idle",
+      "DeployLink": "ovharshudata.arshucs.com"
+    },
+    {
+      "DeployTitle": "MicroVM",
+      "DeployInfo": "Fly.IO, USD $1.94 * 2/M",
+      "ProviderLink": "https://fly.io/",
+      "DeploySpec": "Fly Auto Activated <br/> Shutdown in 5 Secs Idle",
+      "DeployLink": "flyarshudata.arshucs.com"
+    },
+    {
+      "DeployTitle": "Unikernel",
+      "DeployInfo": "Unikraft.Cloud, USD $19/M",
+      "ProviderLink": "https://unikraft.cloud/",
+      "DeploySpec": "Unikraft Auto Activated <br/> Scale to Zero in 1 Sec Idle",
+      "DeployLink": "uniarshudata.arshucs.com"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+
+<div class="ar-flex-input-wrap bg-alt" id="{{$ViewParentID}}AddViewDiv" style="text-align:center;padding:5px 5px;display:none;" title="ViewID={{$ViewID}},ViewParentID={{$ViewParentID}},KeyPath={{$KeyPath}}">
+
+    <div>TaskName</div>
+    <input id="addTaskName" type="text" class="ar-input ar-border" style="width: 100%; padding: 0 0 0 10px;" data-key="ToDo.ToDoList~0.TaskName" />
+    <div>
+        <button class="ar-button ar-border" style="margin:5px;background-color:green;width:75px;" onclick="hideElm('{{$ViewParentID}}AddViewDiv')">Close</button>
+        <button class="ar-button ar-border" style="margin:5px;background-color:lightblue;width:75px;"
+                data-ar-action="addJsonToJsonArray" 
+                data-ar-progress="{{$ViewParentID}}Progress" 
+                data-ar-response="{{$ViewParentID}}Response"
+                data-ar-appsite="{{$AppSite}}" 
+                data-ar-appview="{{$AppView}}" 
+                data-ar-appcomponent="{{$ViewParentID}}"
+                data-ar-keyinfo="{'TaskName':''}"
+                data-ar-datainfo="todoAddViewGetAddInfo"
+                data-ar-duplicatekeyinfo="{'TaskName':''}"
+                data-ar-component="{{$ViewParentID}}"
+                data-ar-filter="todoFilterViewGetFilter"
+                data-ar-config="{ 'PageNo': '999999', 'ItemsPerPage': '{{$ItemsPerPage}}' }"
+                data-ar-refreshmode="todoGetRefreshMode" ,
+                data-ar-refreshdomain="todoGetRefreshDomain">
+            Add
+        </button>
+
+    </div>
+</div>
+
+<script>
+
+    function todoAddViewGetAddInfo() {
+        let addList = getFlatJson('{{$ViewParentID}}AddViewDiv', '{{$ViewParentID}}');
+        for (let key in addList) {
+            if (addList.hasOwnProperty(key)) {
+                console.log("Add:" + key + "="+ addList[key]);
+            }
+        }
+        return addList;
+    }
+    
+</script>

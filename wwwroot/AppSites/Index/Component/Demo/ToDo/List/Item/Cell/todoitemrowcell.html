@@ -1,0 +1,28 @@
+{{VIEWPLACEHOLDER}}
+
+<input type="hidden" id="{{$Guid}}KeyPath"
+       value='{ "{{$KeyPath}}.TaskName" : "{{$TaskName}}", "{{$KeyPath}}.TaskStatus" : "{{$TaskStatus}}", "{{$KeyPath}}.Guid" : "{{$Guid}}" }' />
+
+<input type="checkbox" id="{{$Guid}}" title="Check to InProgress" {{@Filter}}disabled{{ /Filter}}
+       data-ar-action="editJsonInJsonArray"
+       data-ar-progress="{{$ViewID}}Progress"
+       data-ar-response="noresponse"
+       data-ar-appsite="{{$AppSite}}"
+       data-ar-appview="{{$AppView}}"
+       data-ar-appcomponent="{{$ToDoData}}"
+       data-ar-keyinfo="{ '{{$KeyPath}}.Guid' : '{{$Guid}}' }"
+       data-ar-datainfo="{ '{{$KeyPath}}.TaskStatus' : 'InProgress' }"
+       data-ar-validkeyinfo="{'TaskName':'', 'TaskStatus':''}"
+       data-ar-duplicatekeyinfo="{'TaskName':''}"
+       data-view="{{$ViewID}}"
+       data-ar-component="todoFilterRefreshComponent"
+       data-ar-filter="todoFilterViewGetFilter"
+       data-ar-config="{ 'PageNo': '{{$PageNo}}', 'ItemsPerPage': '{{$ItemsPerPage}}' }"
+       data-ar-refreshmode="todoGetRefreshMode" ,
+       data-ar-refreshdomain="todoGetRefreshDomain"
+       data-ar-postcall="todoCloseView">
+
+<div style="display:inline" title="ViewName={{$ViewName}},ViewID={{$ViewID}},ViewParentID={{$ViewParentID}},KeyPath={{$KeyPath}},Guid={{$Guid}}">
+    {{$TaskName}}
+    <span id="{{$ViewID}}Progress"></span>
+</div>

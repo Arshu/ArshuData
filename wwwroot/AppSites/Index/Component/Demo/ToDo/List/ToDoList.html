@@ -1,0 +1,27 @@
+
+
+<div style="padding:5px 5px;width:250px;position:relative;" title="ViewID={{$ViewID}},ViewParentID={{$ViewParentID}},KeyPath={{$KeyPath}}">
+    {{VIEWPLACEHOLDER}}
+
+    <div style="text-align:center;">
+        <span id="{{$ViewID}}Progress"></span>
+        <div style="margin:5px; padding:10px;text-align:center;display:none;" class="ar-notification" id="{{$ViewID}}ResponseContainer">
+            <button class="ar-delete" onclick="hideElm('{{$ViewID}}ResponseContainer')"></button>
+            <div id="{{$ViewID}}Response"></div>
+        </div>
+    </div>
+
+    {{ToDoTop}}
+
+    {{@ToDoList}}
+        {{ToDoItemRow}}
+    {{/ToDoList}}
+    {{^ToDoList}}
+        {{ToDoEmptyRow}}
+    {{/ToDoList}}
+
+    {{ToDoBottom}}
+
+</div>
+
+

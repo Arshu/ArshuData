@@ -1,0 +1,41 @@
+<div class="ar-border" style="padding:5px">
+    {{VIEWPLACEHOLDER}}
+
+    {{ToDoMockView}}
+
+    {{RefreshAction}}
+
+    <div class="ar-flex-content-wrap" style="" title="ViewID={{$ViewID}},ViewParentID={{$ViewParentID}},KeyPath={{$KeyPath}}">
+
+        <div style="text-align:center;">
+            <span id="{{$ViewID}}Progress"></span>
+            <div style="margin:5px; padding:10px;text-align:center;display:none;" class="ar-notification" id="{{$ViewID}}ResponseContainer">
+                <button class="ar-delete" onclick="hideElm('{{$ViewID}}ResponseContainer')"></button>
+                <div id="{{$ViewID}}Response"></div>
+            </div>
+        </div>
+
+        {{ToDoAddView}}
+
+        {{ToDoEditView}}
+
+        {{ToDoDeleteView}}
+
+        {{ToDoChangeList}}
+
+    </div>
+
+</div>
+
+<script type="text/javascript" id="{{$ViewID}}Script">
+   
+    function todoGetRefreshMode() {
+        let refreshMode = getElm('{{$ViewID}}RefreshModeSelect').value;
+        return refreshMode;
+    }
+
+    function todoGetRefreshDomain() {
+        return getElm('{{$ViewID}}RefreshDomain').value;
+    }
+    
+</script>

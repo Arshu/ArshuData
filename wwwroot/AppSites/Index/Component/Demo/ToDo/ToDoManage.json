@@ -1,0 +1,81 @@
+{
+   "AllowedRoles": "Guest",
+   "DefaultWebSocket$": false,
+   "ItemsPerPage$": "2",
+   "PageNo$": "1",
+   "ReadOnly$": false,
+   "ShowDeleteAction": true,
+   "ShowEditAction": true,
+   "ToDoData": "ToDoManage",
+   "ToDoList": [
+      {
+         "Guid": "8c52b17d-232b-4c11-87fa-034cb4dc38ad",
+         "TaskName": "TaskName 1",
+         "TaskNo": 1,
+         "TaskStatus": "Pending"
+      },
+      {
+         "Guid": "b163eb5d-db0a-40a3-80c0-17d2696586bb",
+         "TaskName": "TaskName 2",
+         "TaskNo": 2,
+         "TaskStatus": "Complete"
+      },
+      {
+         "Guid": "7c1737e0-cbbe-4da6-88f1-56522e31d42b",
+         "TaskName": "TaskName 3",
+         "TaskNo": 3,
+         "TaskStatus": "Pending"
+      },
+      {
+         "Guid": "5c94edeb-e2cb-4e83-86ed-082459030e6d",
+         "TaskName": "TaskName 4",
+         "TaskNo": 4,
+         "TaskStatus": "Complete"
+      },
+      {
+         "Guid": "bb5cdf26-cba4-4fa6-b9ff-279222cb3b90",
+         "TaskName": "TaskName 5",
+         "TaskNo": 5,
+         "TaskStatus": "InProgress"
+      },
+      {
+         "Guid": "8f7dbea3-8411-4e3f-8158-d397dc44b269",
+         "TaskName": "TaskName 6",
+         "TaskNo": 6,
+         "TaskStatus": "Pending"
+      },
+      {
+         "Guid": "1a780a1a-fdfc-4046-ab71-f8847cf5e424",
+         "TaskName": "TaskName 7",
+         "TaskNo": 7,
+         "TaskStatus": "InProgress"
+      },
+      {
+         "Guid": "57a5ede4-9b15-49d6-b8db-53c4413943b6",
+         "TaskName": "TaskName 8",
+         "TaskNo": 8,
+         "TaskStatus": "InProgress"
+      },
+      {
+         "Guid": "87e50d79-6f1e-458e-bd2c-f9f7dbfd3a80",
+         "TaskName": "TaskName 9",
+         "TaskNo": 9,
+         "TaskStatus": "InProgress"
+      },
+      {
+         "Guid": "7b943107-0dea-4591-bf08-c7c90e59aa8f",
+         "TaskName": "TaskName 10",
+         "TaskNo": 10,
+         "TaskStatus": "Pending"
+      }
+   ],
+   "ToDoListSchema": {
+      "Guid": "",
+      "TaskEndDate": "{{$EndDate}}",
+      "TaskName": "TaskName",
+      "TaskNo": "{{$RowNo}}",
+      "TaskProgress": "{{$Percent}}",
+      "TaskStartDate": "{{$StartDate}}",
+      "TaskStatus": "Pending"
+   }
+}

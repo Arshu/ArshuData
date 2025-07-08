@@ -1,0 +1,91 @@
+<div class="ar-flex-content-spaced" style="width:100%;" title="ViewID={{$ViewID}},ViewParentID={{$ViewParentID}},KeyPath={{$KeyPath}}">
+    {{@HavePreviousPage}}
+    <button class="ar-button ar-border" style="width:40px;height:40px;" title="PageNo=1, ItemsPerPage={{$ItemsPerPage}}"
+            data-ar-action="refreshViewComponentHtml" 
+            data-ar-progress="firstToDoProgress" 
+            data-ar-response="{{$ViewParentID}}Response"
+            data-ar-appsite="{{$AppSite}}" 
+            data-ar-appview="{{$AppView}}"
+            data-ar-component="{{$ViewParentID}}"
+            data-ar-filter="todoFilterViewGetFilter"
+            data-ar-config="{'PageNo': '1', 'ItemsPerPage': '{{$ItemsPerPage}}'}"
+            data-ar-refreshmode="todoGetRefreshMode" ,
+            data-ar-refreshdomain="todoGetRefreshDomain">
+        <strong style="font-weight:bolder;">&lt;&lt;</strong> <span id="firstToDoProgress"></span>
+    </button>
+    <button class="ar-button ar-border" style="width:40px;height:40px;" title="PageNo={{$PreviousPage}}, ItemsPerPage={{$ItemsPerPage}}"
+            data-ar-action="refreshViewComponentHtml" 
+            data-ar-progress="previousToDoProgress" 
+            data-ar-response="{{$ViewParentID}}Response"
+            data-ar-appsite="{{$AppSite}}" 
+            data-ar-appview="{{$AppView}}"
+            data-ar-component="{{$ViewParentID}}"
+            data-ar-filter="todoFilterViewGetFilter"
+            data-ar-config="{'PageNo': '{{$PreviousPage}}', 'ItemsPerPage': '{{$ItemsPerPage}}'}"
+            data-ar-refreshmode="todoGetRefreshMode" ,
+            data-ar-refreshdomain="todoGetRefreshDomain">
+        <strong style="font-weight:bolder;">&lt;</strong> <span id="previousToDoProgress"></span>
+    </button>
+    {{/HavePreviousPage}}
+    {{^HavePreviousPage}}
+    <button class="ar-button ar-border" style="width:40px;height:40px;" disabled>
+        <strong style="font-weight:bolder;">&lt;&lt;</strong> <span id="firstToDoProgress"></span>
+    </button>
+    <button class="ar-button ar-border" style="width:40px;height:40px;" disabled>
+        <strong style="font-weight:bolder;">&lt;</strong> <span id="previousToDoProgress"></span>
+    </button>
+    {{/HavePreviousPage}}
+
+    <div class="ar-flex-item-stretch"></div>
+
+    {{@HaveNextPage}}
+    <button class="ar-button ar-border" style="width: 40px; height: 40px;" title="PageNo={{$NextPage}}, ItemsPerPage={{$ItemsPerPage}}"
+            data-ar-action="refreshViewComponentHtml" 
+            data-ar-progress="nextToDoProgress" 
+            data-ar-response="{{$ViewParentID}}Response"
+            data-ar-appsite="{{$AppSite}}" 
+            data-ar-appview="{{$AppView}}"
+            data-ar-component="{{$ViewParentID}}"
+            data-ar-filter="todoFilterViewGetFilter"
+            data-ar-config="{'PageNo': '{{$NextPage}}', 'ItemsPerPage': '{{$ItemsPerPage}}'}"
+            data-ar-refreshmode="todoGetRefreshMode" ,
+            data-ar-refreshdomain="todoGetRefreshDomain">
+        <strong style="font-weight:bolder;">&gt;</strong><span id="nextToDoProgress"></span>
+    </button>
+    <button class="ar-button ar-border" style="width: 40px; height: 40px;" title="PageNo=MaxNoOfPages, ItemsPerPage={{$ItemsPerPage}}"
+            data-ar-action="refreshViewComponentHtml" 
+            data-ar-progress="lastToDoProgress" 
+            data-ar-response="{{$ViewParentID}}Response"
+            data-ar-appsite="{{$AppSite}}" data-ar-appview="{{$AppView}}"
+            data-ar-component="{{$ViewParentID}}"
+            data-ar-filter="todoFilterViewGetFilter"
+            data-ar-config="{'PageNo': '{{$MaxNoOfPages}}', 'ItemsPerPage': '{{$ItemsPerPage}}'}"
+            data-ar-refreshmode="todoGetRefreshMode" ,
+            data-ar-refreshdomain="todoGetRefreshDomain">
+        <strong style="font-weight:bolder;">&gt;&gt;</strong><span id="lastToDoProgress"></span>
+    </button>
+    {{/HaveNextPage}}
+    {{^HaveNextPage}}
+    <button class="ar-button ar-border" style="width:40px;height:40px;" disabled>
+        <strong style="font-weight:bolder;">&gt;</strong> <span id="nextToDoProgress"></span>
+    </button>
+    <button class="ar-button ar-border" style="width:40px;height:40px;" disabled>
+        <strong style="font-weight:bolder;">&gt;&gt;</strong> <span id="lastToDoProgress"></span>
+    </button>
+    {{/HaveNextPage}}
+
+    <button class="ar-button ar-border" style="width:40px;height:40px;margin-left:5px;" title="PageNo={{$PageNo}}, ItemsPerPage={{$ItemsPerPage}}"
+            data-ar-action="refreshViewComponentHtml" 
+            data-ar-progress="refreshToDoProgress" 
+            data-ar-response="{{$ViewParentID}}Response"
+            data-ar-appsite="{{$AppSite}}" 
+            data-ar-appview="{{$AppView}}" 
+            data-ar-component="{{$ViewParentID}}"
+            data-ar-filter="todoFilterViewGetFilter"
+            data-ar-config="{'PageNo': '{{$PageNo}}', 'ItemsPerPage': '{{$ItemsPerPage}}'}"
+            data-ar-refreshmode="todoGetRefreshMode" ,
+            data-ar-refreshdomain="todoGetRefreshDomain">
+        &#x2714;<span id="refreshToDoProgress"></span>
+    </button>
+
+</div>
