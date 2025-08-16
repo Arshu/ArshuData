@@ -1,1 +1,1 @@
-.\win-x64\Arshu.Base.exe --rootpath "." --urls "http://0.0.0.0:8080" 
+.\win-x64\Arshu.Base.exe --rootpath "." --urls "http://0.0.0.0:8080;https://0.0.0.0:8081" 

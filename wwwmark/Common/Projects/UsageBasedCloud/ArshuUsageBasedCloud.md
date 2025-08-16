@@ -1,12 +1,14 @@
-# Usage based Cloud 
+# Usage/On-Demand based Cloud 
 
 The cloud workloads may be moving towards actual usage based charging from the current subscription based charging.
 
 Current Major Cloud providers services are majorly subscription based irrespective of Usage and newer cloud providers are providing usage based pricing of compute/memory at the edge
 
+Usage based infrastructures also enables on-demand provisioning which may be be suitable for certain workloads
+
 ## What
 
-Build Management Solutions for applications and clonable applications to leverage the Usage Based Cloud and Overcome the limitations of the Scale to Zero.
+Build Management Solutions for applications and clonable applications to leverage the Usage/On-Demand Based Infrastructure and Overcome the limitations of the Scale to Zero.
 
 ## Why
 

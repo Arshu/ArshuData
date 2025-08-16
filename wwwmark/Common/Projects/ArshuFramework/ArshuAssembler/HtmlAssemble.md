@@ -1,48 +1,30 @@
+
 # Abstraction for Assembling Static Data UI from Html Components
 
-![Html Assembler ](screenshots/assembler_html.png) "Assemble Html".
+![Html Assembler Overview](screenshots/assembler_html.png) "Assemble Html + Json Overview".
+
+# Abstraction for Assembling Static Html (3 Rules)
 
 1. Html Composition
 
 #### Abstraction for Composing Html with Inner Html Fragments
 
-<pre>
+![Html Direct Assembler](RulesofAssembly/HtmlDirectAssembly.JPG) "Direct Html Assemble".
 
-Title.html
-&lt;div&gt; 
-     {{TitleContent}}
-&lt;/div&gt;     
+![Html Direct Assembler](RulesofAssembly/HtmlDirectAssemblySample.JPG) "Direct Html Assemble Sample".
 
-TitleContent.html
-&lt;div&gt; 
-     Title
-&lt;/div&gt;     
+3. Html Context Composition
 
-</pre>
+#### Abstraction for Composing Html Based on Context
 
-2. Html Inner Composition
+![Html Context Assembler](RulesofAssembly/HtmlContextAssembly.JPG) "Context Html Assemble".
+
+![Html Context Assembler](RulesofAssembly/HtmlContextAssemblySample.JPG) "Context Html Assemble Sample".
+
+2. Html Slotted Composition
 
 #### Abstraction for Composing Inner Html with Inner Html Fragments
 
-<pre>
+![Html Slotted Assembler](RulesofAssembly/HtmlSlottedAssembly.JPG) "Slotted Html Assemble".
 
-{{#ZoomIn}}
-    {{@HTMLPLACEHOLDER}}
-
-Center.html
- &lt;div&gt; 
-    {{#Center}}
-		{{@HTMLPLACEHOLDER}}
-			{{TitleContent}}
-		{{/HTMLPLACEHOLDER}}
-    {{/Center}}
-&lt;/div&gt;     
-
-TitleContent.html
-&lt;div&gt; 
-     Title
-&lt;/div&gt;     
-
-
-</pre>
-
+![Html Slotted Assembler](RulesofAssembly/HtmlSlottedAssemblySample.JPG) "Slotted Html Assemble Sample".

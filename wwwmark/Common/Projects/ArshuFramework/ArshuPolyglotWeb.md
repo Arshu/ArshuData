@@ -18,7 +18,7 @@ Build a Declarative framework based on HTML for markup + Json for data + Js Fron
 <div class="ar-flex-content-wrap" style="min-height:400px;">
     <div class="ar-border" style="margin:20px;padding:5px;">
         <div style="width:300px;">
-            {{ToDo}}
+            {{ToDoManage}}
         </div>
     </div>
 </div>

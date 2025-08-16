@@ -2,60 +2,33 @@
 
 ![Html+Json Assembler ](screenshots/assembler_htmljson.png) "Assemble Html + Json".
 
-1. Placeholder Data Composition
+1. Json Property Data Composition
 
 #### Abstraction for Composing from Html + Json Property Fragemnts
 
-<pre>
+![Html Json Property Assembler](RulesofAssembly/JsonPropertyAssembly.JPG) "Html + Json Property Assemble".
 
-Title.html
-&lt;div&gt; 
-     {{$Title}}
-&lt;/div&gt;     
+![Html Json Property Assembler](RulesofAssembly/JsonPropertyAssemblySample.JPG) "Html + Json Property Assemble Sample".
 
-Title.json
-    {
-        "Title" : "Name"
-    }
-
-</pre>
-
-2. Section Array Composition
+2. Json Array Composition
 
 #### Abstraction for Composing from Html + Json Array Fragemnts
 
-<pre>
+![Html Json Array Assembler](RulesofAssembly/JsonArrayAssembly.JPG) "Html + Json Array Assemble".
 
-List.html
- &lt;div&gt; 
-    {{@List}}
-        {{$TaskName}}
-    {{/List}}
-&lt;/div&gt;     
-
-List.json
-    {
-        "List" : [
-            {
-                "TaskName" : "Task 1"
-            }
-        ]
-    }
-
-</pre>
+![Html Json Array Assembler](RulesofAssembly/JsonArrayAssemblySample.JPG) "Html + Json Array Assemble Sample".
 
 3. Data Flow Composition
 
-#### Json Data Values are composed with Html Component based on the below precedence
+#### Json Data Values are composed with Html Component based on the below default precedence. The precendence can be changed in configuration.
 
 <pre>
 
-    Component State
-        Parent Components State                
-            Context State
-                Global State            
+Component State
+    Parent Components State                
+		Global State            
+			Context State
                 
-
 </pre>
 
 #### Data Defined at Any Higher Data Level can be Overwriten by the Previous Precedence Data if allowed by $ Suffix to the Json Key of the Component
@@ -64,7 +37,10 @@ List.json
 
     Title.json
     {
-        "Title$" : "Name"           ==> Allow Override with Parent/Context/Global Data if Available
+        "Title$" : "Name" 		
     }
 
+	
 </pre>
+
+$ Suffix Allow Override with Parent/Context/Global Data if Available

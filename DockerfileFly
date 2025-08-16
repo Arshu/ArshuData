@@ -1,0 +1,21 @@
+FROM mcr.microsoft.com/dotnet/runtime-deps:9.0-alpine
+LABEL Author="Sridharan Srinivasan" 
+
+RUN apk upgrade --no-cache --available && \
+    apk add tmux curl openssl numactl libmsquic && \
+    rm -rf /var/cache/apk/*
+
+WORKDIR /app/linux-musl-x64
+COPY ./linux-musl-x64/Arshu.Base ./linux-musl-x64/appsettings.json .
+
+WORKDIR /app
+COPY ./Procfile ./license.json ./appconfig.json  .
+COPY ./appconfig/ /app/appconfig/
+COPY ./wwwassets /app/wwwassets
+COPY ./wwwmark /app/wwwmark
+COPY ./wwwroot/ /app/wwwroot/
+
+EXPOSE 8080
+EXPOSE 8081
+
+CMD ["/bin/sh", "-c", "rm -f /app/.overmind.sock;/usr/bin/overmind start -f /app/Procfile"]

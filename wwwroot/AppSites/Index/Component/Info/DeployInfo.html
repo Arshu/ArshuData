@@ -5,13 +5,13 @@
     <div class="ar-card-border" style="text-align:center;margin:5px;flex: 0 1 150px">
         <div class="ar-card-title">{{$DeployTitle}}</div>
         <p class="ar-card-text" style="font-size:xx-small;">
-            <a href="{{$ProviderLink}}"><span style="color:red;">{{$DeployInfo}}</span></a>
+            <a style="text-decoration:none" href="{{$ProviderLink}}"><span style="color:red;">{{$DeployInfo}}</span></a>
         </p>
         <p class="ar-card-text" style="font-size:x-small;">
             {{$DeploySpec}}
         </p>
-        <p class="ar-card-text" style="font-size:xx-small;">
-            <a target="_blank" href="https://{{$DeployLink}}"><span style="color:blue;">{{$DeployLink}}</span></a>
+        <p class="ar-card-text" style="font-size:x-small;">
+            <a target="_blank" style="text-decoration:none;" href="https://{{$DeployLink}}"><span style="color:black;font-weight:bolder;">https://{{$DeployLink}}</span></a>
         </p>
     </div>
     {{/DeployList}}
